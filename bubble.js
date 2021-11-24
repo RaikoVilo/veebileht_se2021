@@ -1,80 +1,99 @@
-const container = document.querySelector(".data-container");
+var container = document.getElementById("array");
 
-function generateBlocks(num = 20) {
-  if (num && typeof num !== "number") {
-    alert("First argument must be a typeof Number");
-    return;
-  }
-  for (let i = 0; i < num; i += 1) {
-    const value = Math.floor(Math.random() * 100);
+// Function to generate the array of blocks
+function generatearray() {
+    for (var i = 0; i < 20; i++) {
 
-    const block = document.createElement("div");
-    block.classList.add("block");
-    block.style.height = `${value * 3}px`;
-    block.style.transform = `translateX(${i * 30}px)`;
+        // Return a value from 1 to 100 (both inclusive)
+        var value = Math.ceil(Math.random() * 100);
 
-    const blockLabel = document.createElement("label");
-    blockLabel.classList.add("block__id");
-    blockLabel.innerHTML = value;
+        // Creating element div
+        var array_ele = document.createElement("div");
 
-    block.appendChild(blockLabel);
-    container.appendChild(block);
-  }
-}
+        // Adding class 'block' to div
+        array_ele.classList.add("block");
 
-function swap(el1, el2) {
-  return new Promise(resolve => {
-    const style1 = window.getComputedStyle(el1);
-    const style2 = window.getComputedStyle(el2);
+        // Adding style to div
+        array_ele.style.height = `${value * 3}px`;
+        array_ele.style.transform = `translate(${i * 30}px)`;
 
-    const transform1 = style1.getPropertyValue("transform");
-    const transform2 = style2.getPropertyValue("transform");
+        // Creating label element for displaying 
+        // size of particular block
+        var array_ele_label = document.createElement("label");
+        array_ele_label.classList.add("block_id");
+        array_ele_label.innerText = value;
 
-    el1.style.transform = transform2;
-    el2.style.transform = transform1;
-
-    // Wait for the transition to end!
-    window.requestAnimationFrame(function() {
-      setTimeout(() => {
-        container.insertBefore(el2, el1);
-        resolve();
-      }, 250);
-    });
-  });
-}
-
-async function bubbleSort(delay = 100) {
-  if (delay && typeof delay !== "number") {
-    alert("sort: First argument must be a typeof Number");
-    return;
-  }
-  let blocks = document.querySelectorAll(".block");
-  for (let i = 0; i < blocks.length - 1; i += 1) {
-    for (let j = 0; j < blocks.length - i - 1; j += 1) {
-      blocks[j].style.backgroundColor = "#FF4949";
-      blocks[j + 1].style.backgroundColor = "#FF4949";
-
-      await new Promise(resolve =>
-        setTimeout(() => {
-          resolve();
-        }, delay)
-      );
-
-      const value1 = Number(blocks[j].childNodes[0].innerHTML);
-      const value2 = Number(blocks[j + 1].childNodes[0].innerHTML);
-
-      if (value1 > value2) {
-        await swap(blocks[j], blocks[j + 1]);
-        blocks = document.querySelectorAll(".block");
-      }
-
-      blocks[j].style.backgroundColor = "#58B7FF";
-      blocks[j + 1].style.backgroundColor = "#58B7FF";
+        // Appending created elements to index.html 
+        array_ele.appendChild(array_ele_label);
+        container.appendChild(array_ele);
     }
-
-    blocks[blocks.length - i - 1].style.backgroundColor = "#13CE66";
-  }
 }
 
-generateBlocks();
-bubbleSort();
+// Promise to swap two blocks
+function swap(el1, el2) {
+    return new Promise((resolve) => {
+
+        // For exchanging styles of two blocks
+        var temp = el1.style.transform;
+        el1.style.transform = el2.style.transform;
+        el2.style.transform = temp;
+
+        window.requestAnimationFrame(function () {
+
+            // For waiting for .25 sec
+            setTimeout(() => {
+                container.insertBefore(el2, el1);
+                resolve();
+            }, 250);
+        });
+    });
+}
+
+// Asynchronous BubbleSort function
+async function BubbleSort(delay = 100) {
+    var blocks = document.querySelectorAll(".block");
+
+    // BubbleSort Algorithm
+    for (var i = 0; i < blocks.length; i += 1) {
+        for (var j = 0; j < blocks.length - i - 1; j += 1) {
+
+            // To change background-color of the
+            // blocks to be compared
+            blocks[j].style.backgroundColor = "#FF4949";
+            blocks[j + 1].style.backgroundColor = "#FF4949";
+
+            // To wait for .1 sec
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                    resolve();
+                }, delay)
+            );
+
+            console.log("run");
+            var value1 = Number(blocks[j].childNodes[0].innerHTML);
+            var value2 = Number(blocks[j + 1]
+                .childNodes[0].innerHTML);
+
+            // To compare value of two blocks
+            if (value1 > value2) {
+                await swap(blocks[j], blocks[j + 1]);
+                blocks = document.querySelectorAll(".block");
+            }
+
+            // Changing the color to the previous one
+            blocks[j].style.backgroundColor = "#6b5b95";
+            blocks[j + 1].style.backgroundColor = "#6b5b95";
+        }
+
+        //changing the color of greatest element 
+        //found in the above traversal
+        blocks[blocks.length - i - 1]
+            .style.backgroundColor = "#13CE66";
+    }
+}
+
+// Calling generatearray function
+generatearray();
+
+// Calling BubbleSort function
+BubbleSort();
