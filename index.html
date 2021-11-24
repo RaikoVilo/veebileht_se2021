@@ -17,5 +17,17 @@
         <div>
             <button class="buttonstyle">sorter 3</button>
         </div>
+
+        <script>
+            window.onload = function(){
+                var name = prompt("What's your name?");
+                var lengthOfName = name.length
+
+                document.getElementById('output').innerHTML = lengthOfName;
+            };
+        </script>
+        <body>
+            <p id="output"></p>
+        </body>
     </body>
 </html>
