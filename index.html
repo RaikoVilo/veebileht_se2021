@@ -5,17 +5,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="theme.css" rel="stylesheet" type="text/css" />
+    <link href="button.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1>Sissejuhatus erialasse 2021 lehekülg </h1>
-    <p>Kui sa täpselt ei tea kuidas töötavad sorteerimise algoritmid ja vikipeedia ei anna sulle animatsiooni, siis worry no more, meil on sulle lahenuds. Näe siin all saad vaadata kuidas mõned algoritmid töötavad.</p>
-    <p>Sisaldab 13+ contenti, vaadata ainult omal riskil</p>
-    <div>
-        <script src="buttonpress.js"></script>
-        <button class="buttonstyle" onclick="sorting('bubble')">Bubble</button>
-        <button class="buttonstyle" onclick="sorting('bubble')">sorter 2</button>
-        <button class="buttonstyle" onclick="sorting('bubble')">sorter 3</button>
+    <div class="header">
+        <h1>Sissejuhatus erialasse 2021 lehekülg </h1>
     </div>
-    <p id="sorting"></p>
+
+    <div class="content">
+        <div>
+            <p>Kui sa täpselt ei tea kuidas töötavad sorteerimise algoritmid ja vikipeedia ei anna sulle animatsiooni, siis worry no more, meil on sulle lahenuds. Näe siin all saad vaadata kuidas mõned algoritmid töötavad.</p>
+            <p>Sisaldab 13+ contenti, vaadata ainult omal riskil</p>
+        </div>
+        <div>
+            <script src="choice.js" type="text/javascript"></script>
+
+            <div>
+                <table>
+                    <tr>
+                        <td class="buttoncontainer">
+                            <img class="image_active" onclick="sorting('bubble')" src="media/bubble_active.gif" />
+                            <img class="image" onclick="sorting('bubble')" src="media/bubble.gif" />
+                            <button class="buttonstyle" onclick="sorting('bubble')">Bubble</button>
+                        </td>
+                        <td class="buttoncontainer">
+                            <img class="image_active" onclick="sorting('insertion')" src="media/insertion_active.gif" />
+                            <img class="image" onclick="sorting('insertion')" src="media/insertion.gif" />
+                            <button class="buttonstyle" onclick="sorting('insertion')">Insertion</button>
+                        </td>
+                        <td class="buttoncontainer">
+                            <img class="image_active" onclick="sorting('quicksort')" src="media/quick_sort_active.gif" />
+                            <img class="image" onclick="sorting('quicksort')" src="media/quick_sort.gif" />
+                            <button class="buttonstyle" onclick="sorting('quicksort')">Quicksort</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div class="tablecontainer">
+            <table class="table">
+                <tr>
+                    <td id="sorting"><iframe class='sortingstyle' src='bubble/index.html' width='638' height='414' frameBorder='0'>Browser not compatible.</iframe></td>
+                    <td class="descriptionbox">lmaosodoaods</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1>yehe</h1>
+    </div>
 </body>
 </html>
