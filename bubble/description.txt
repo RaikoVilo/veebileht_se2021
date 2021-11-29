@@ -1,5 +1,5 @@
 <h>Description</h>
-<p>Algoritm käin terve listi läbi nii, et vaatab elementi ja sellele järgnevat elementi.</p>
+<p>Algoritm käib terve listi läbi nii, et vaatab elementi ja sellele järgnevat elementi.</p>
 <p>Kui hetkene element on suurem kui sellele järgnev element, siis vahetavad need kohad.</p>
 <p>Algoritm teeb täpselt sama palju tsükleid kui on elemente jadas.</p>
 <p>Iga tsükliga jõuab selle tsükli suurim element viimaseks elemendiks (välja arvatud elemendid, mis on juba eelnevatel tsüklitel lõppu viidud)</p>

@@ -1,4 +1,6 @@
-<h>Description<h>
+<h>Description</h>
 <p>Algoritm töötab nii, et käib tsükliti läbi jadast ning otsib välja kõige väiksema elemendi.</p>
 <p>Tsükli väikseim element viiakse jada esimeseks elemendiks.</p>
 <p>Iga järgnev tsükkel viib selle tsükli väikseima elemendi selle tsükli esimeseks elemendiks (selle tsükli jadast on välja arvestatud eelmise tsükli poolt ette viidid element/elemendid)</p>
+</br>
+<p>Hetkene simulatsioon ei näita insertion sorti perfektselt, kuna animatsioon on tehtud Bubble Sorti algoritmi põhjal ning seal ei muutu blockidel id. Seetõttu korduva suurusega blockid keeravad algoritmi vussi.</p>
