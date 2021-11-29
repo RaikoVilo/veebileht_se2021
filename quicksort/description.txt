@@ -1,1 +1,3 @@
 <h>Description<h>
+<p>kuna puudub ka algoritm, siis ka seletus sellele.</p>
+<p>see leht uuendadakse lähi ajal...</p>
