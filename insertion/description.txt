@@ -1,1 +1,4 @@
 <h>Description<h>
+<p>Algoritm töötab nii, et käib tsükliti läbi jadast ning otsib välja kõige väiksema elemendi.</p>
+<p>Tsükli väikseim element viiakse jada esimeseks elemendiks.</p>
+<p>Iga järgnev tsükkel viib selle tsükli väikseima elemendi selle tsükli esimeseks elemendiks (selle tsükli jadast on välja arvestatud eelmise tsükli poolt ette viidid element/elemendid)</p>
